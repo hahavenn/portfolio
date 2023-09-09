@@ -1,0 +1,34 @@
+<template>
+	<div class="search">
+		<input
+			type="text"
+			placeholder="поиск"
+		/>
+		<SearchIcon class="css-icon" />
+	</div>
+</template>
+
+<script setup>
+import SearchIcon from "@/components/Icons/SearchIcon.vue";
+</script>
+
+<style scoped lang="scss">
+.search {
+	position: relative;
+
+	.css-icon {
+		position: absolute;
+		right: 7px;
+		top: 7px;
+	}
+
+	input {
+		@include border-default($color: #d2d2d2);
+		font-size: $font-size_default;
+		padding: 0 10px;
+		height: 40px;
+		padding-right: 36px;
+		width: 200px;
+	}
+}
+</style>

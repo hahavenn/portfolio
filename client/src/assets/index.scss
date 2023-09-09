@@ -1,0 +1,23 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+// global styles/classes
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $font-family_play;
+}
+
+// remove outline onfocus
+input {
+	outline: none;
+}
+
+// icon default styles
+.icon {
+	width: $icon-size_default;
+	height: $icon-size_default;
+	cursor: pointer;
+}
