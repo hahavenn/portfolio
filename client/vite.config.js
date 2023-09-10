@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import { fileURLToPath, URL } from "url";
+
+import * as path from "path";
 
 export default defineConfig({
 	server: {
@@ -8,9 +9,7 @@ export default defineConfig({
 		host: "localhost",
 	},
 	resolve: {
-		alias: {
-			"@": fileURLToPath(new URL("./src", import.meta.url)),
-		},
+		alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
 	},
 	plugins: [vue()],
 	css: {
