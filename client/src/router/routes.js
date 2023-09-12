@@ -1,4 +1,4 @@
-import { IndexRoute_Names, IndexRoute_Alias, IndexRoute_Paths } from "./index.constants.js";
+import { IndexRoute_Names, IndexRoute_Alias, IndexRoute_Paths } from "./indexContants.js";
 
 // all routes in one variable
 const routes = [

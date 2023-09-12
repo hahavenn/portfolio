@@ -1,10 +1,18 @@
-/* mixins */
+/* border */
 
 // default border
-@mixin border-default($color: #ddd) {
-	border: 2px solid $color;
-	border-radius: 8px;
+@mixin border-default($color: transparent, $radius: 8px, $width: 2px) {
+	border: $width solid $color;
+	border-radius: $radius;
 }
+
+// rounded border
+@mixin border-rounded($color: transparent, $radius: 50%, $width: 2px) {
+	border: $width solid $color;
+	border-radius: $radius;
+}
+
+/* elements size */
 
 // elements 100%
 @mixin fullSize {
@@ -16,4 +24,32 @@
 @mixin layoutSize {
 	width: 100vw;
 	height: 100vh;
+}
+
+/* presets */
+
+// flex
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+/* hover */
+
+// hover border
+@mixin border-hover($color: $color-active-default) {
+	border-color: $color;
+	@include transition-basic();
+}
+
+/* focus */
+@mixin input-focused($color: $color-active-default) {
+	border-color: $color;
+}
+
+/* transition */
+@mixin transition-basic($time: $transition-default) {
+	transition: all $time;
 }
