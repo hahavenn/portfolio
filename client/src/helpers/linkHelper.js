@@ -1,4 +1,4 @@
-import { isString } from "./typeCheckerHelper";
+import { isString } from "./typeHelper";
 import typeError from "@/constants/errors/typeError";
 
 //open link in new tab
