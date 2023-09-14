@@ -13,7 +13,7 @@
 	text-decoration: 2px solid underline;
 	font-size: $font-size_medium;
 	height: 100%;
-	@include flex-center;
+	@include flex;
 	padding: 10px;
 	cursor: pointer;
 
