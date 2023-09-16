@@ -31,9 +31,9 @@
 // flex
 @mixin flex($direction: row, $justify-content: center, $align-items: center) {
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	flex-direction: $direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
 }
 
 /* hover */
