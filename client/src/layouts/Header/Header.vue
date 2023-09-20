@@ -2,12 +2,14 @@
 	<div class="header">
 		<div class="header_container">
 			<HeaderPanel>
-				<Logo />
+				<Logo @click="routerPush(IndexRoute_Paths._)" />
 				<Search />
 			</HeaderPanel>
 			<HeaderPanel>
 				<div class="sections">
-					<HeaderSectionInfo>Обо мне</HeaderSectionInfo>
+					<HeaderSectionInfo @click="routerPush(AboutRoute_Paths._)"
+						>Обо мне</HeaderSectionInfo
+					>
 					<HeaderSectionInfo>Что умею</HeaderSectionInfo>
 				</div>
 				<ThemeSwitcher />
@@ -43,22 +45,26 @@ import { openGoToLink } from "@/helpers/linkHelper";
 import { openMailToLink } from "@/helpers/mailHelper";
 
 import { hahaSocials } from "@/constants/links/socialLinks";
+import { IndexRoute_Paths } from "@/router/indexConstants";
+import { AboutRoute_Paths } from "@/router/About/aboutConstants";
+
+import useRouterHook from "@/hooks/useRouterHook";
+
+const { routerPush } = useRouterHook();
 </script>
 
 <style lang="scss" scoped>
 .header {
 	width: 100%;
+	min-height: 60px;
 	height: 60px;
 	border-bottom: 1px solid $color-default;
 
 	.header_container {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
 		height: 100%;
 		width: $width-desktop;
 		margin: auto;
-		justify-content: space-between;
+		@include flex(row, space-between, center);
 
 		.sections {
 			display: flex;

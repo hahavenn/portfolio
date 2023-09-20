@@ -1,11 +1,14 @@
 <template>
 	<div class="layout">
 		<Header />
+		<div class="content">
+			<slot></slot>
+		</div>
 	</div>
 </template>
 
 <script setup>
-import Header from "./Header/Header.vue";
+import Header from "@/layouts/Header/Header.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -14,8 +17,10 @@ import Header from "./Header/Header.vue";
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	@include flex(column, center, center);
+
+	.content {
+		@include fullSize;
+	}
 }
 </style>
