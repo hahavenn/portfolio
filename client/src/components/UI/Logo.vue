@@ -10,6 +10,6 @@
 	padding: 10px 0;
 	cursor: pointer;
 	letter-spacing: -1px;
-	color: $font-color_default;
+	color: $font-color_black;
 }
 </style>

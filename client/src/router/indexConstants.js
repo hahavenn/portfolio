@@ -1,6 +1,6 @@
 // route names
 const IndexRoute_Names = {
-	Index: "index",
+	INDEX: "index",
 };
 
 // route paths

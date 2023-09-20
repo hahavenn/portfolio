@@ -25,7 +25,9 @@ const currentRef = ref();
 
 // onclick change state of theme
 function toggler() {
-	currentRef.value.style.transform = stylesStore.isLightTheme ? "translateX(54px)" : "translateX(0px)";
+	currentRef.value.style.transform = stylesStore.isLightTheme
+		? "translateX(54px)"
+		: "translateX(0px)";
 	stylesStore.changeThemeState();
 }
 </script>
