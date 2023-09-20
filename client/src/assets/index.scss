@@ -10,6 +10,10 @@
 	font-family: $font-family_play;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 // remove outline onfocus
 input {
 	outline: none;
@@ -20,4 +24,8 @@ input {
 	width: $icon-size_default;
 	height: $icon-size_default;
 	cursor: pointer;
+}
+
+a {
+	color: $font-color_black;
 }
