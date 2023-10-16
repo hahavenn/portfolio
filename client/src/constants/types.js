@@ -23,3 +23,8 @@ export const TYPE_semanticHTML = {
 	CODE: "code",
 	TEXT: "text",
 };
+
+// instances types
+export const TYPE_INSTANCES = {
+	LINK: "link",
+};
