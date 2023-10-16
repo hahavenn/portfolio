@@ -4,7 +4,7 @@ import { AboutRoute_Alias, AboutRoute_Names, AboutRoute_Paths } from "./aboutCon
 export default [
 	{
 		path: AboutRoute_Paths._,
-		component: async () => await import("@/components/About/About.vue"),
+		component: async () => await import("@/components/About/AboutComp.vue"),
 		alias: [...AboutRoute_Alias],
 		name: AboutRoute_Names.ABOUT,
 	},

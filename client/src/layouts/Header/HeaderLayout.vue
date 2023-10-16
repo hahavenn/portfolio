@@ -1,9 +1,9 @@
 <template>
-	<div class="header">
+	<header>
 		<div class="header_container">
 			<HeaderPanel>
-				<Logo @click="routerPush(IndexRoute_Paths._)" />
-				<Search />
+				<LogoUI @click="routerPush(IndexRoute_Paths._)" />
+				<SearchFunc />
 			</HeaderPanel>
 			<HeaderPanel>
 				<div class="sections">
@@ -12,30 +12,30 @@
 					>
 					<HeaderSectionInfo>Что умею</HeaderSectionInfo>
 				</div>
-				<ThemeSwitcher />
-				<IconRoundWrapper @click="openGoToLink(hahaSocials.GITHUB)">
+				<ThemeSwitcherFunc />
+				<IconRoundWrapperUI @click="openGoToLink(LINK_hahaSocials.GITHUB)">
 					<GithubIcon />
-				</IconRoundWrapper>
-				<IconRoundWrapper @click="openGoToLink(hahaSocials.TELEGRAM)">
+				</IconRoundWrapperUI>
+				<IconRoundWrapperUI @click="openGoToLink(LINK_hahaSocials.TELEGRAM)">
 					<TelegramIcon />
-				</IconRoundWrapper>
-				<IconRoundWrapper @click="openMailToLink(hahaSocials.MAIL)">
+				</IconRoundWrapperUI>
+				<IconRoundWrapperUI @click="openMailToLink(LINK_hahaSocials.MAIL)">
 					<MailIcon />
-				</IconRoundWrapper>
+				</IconRoundWrapperUI>
 			</HeaderPanel>
 		</div>
-	</div>
+	</header>
 </template>
 
 <script setup>
 import HeaderPanel from "./HeaderPanel.vue";
 import HeaderSectionInfo from "./HeaderSectionInfo.vue";
 
-import ThemeSwitcher from "@/components/Functionals/ThemeSwitcher.vue";
-import Search from "@/components/Functionals/Search.vue";
+import ThemeSwitcherFunc from "@/components/Functionals/ThemeSwitcherFunc.vue";
+import SearchFunc from "@/components/Functionals/SearchFunc.vue";
 
-import IconRoundWrapper from "@/components/UI/IconRoundWrapper.vue";
-import Logo from "@/components/UI/Logo.vue";
+import IconRoundWrapperUI from "@/components/UI/Icons/IconRoundWrapperUI.vue";
+import LogoUI from "@/components/UI/LogoUI.vue";
 
 import GithubIcon from "@/components/Icons/GithubIcon.vue";
 import TelegramIcon from "@/components/Icons/TelegramIcon.vue";
@@ -44,7 +44,7 @@ import MailIcon from "@/components/Icons/MailIcon.vue";
 import { openGoToLink } from "@/helpers/linkHelper";
 import { openMailToLink } from "@/helpers/mailHelper";
 
-import { hahaSocials } from "@/constants/links/socialLinks";
+import { LINK_hahaSocials } from "@/constants/links";
 import { IndexRoute_Paths } from "@/router/indexConstants";
 import { AboutRoute_Paths } from "@/router/About/aboutConstants";
 
@@ -54,17 +54,20 @@ const { routerPush } = useRouterHook();
 </script>
 
 <style lang="scss" scoped>
-.header {
+header {
 	width: 100%;
-	min-height: 60px;
-	height: 60px;
-	border-bottom: 1px solid $color-default;
+	min-height: $height_header;
+	height: $height_header;
+	border-bottom: 1px solid $color_default;
+	@include pos-fix-l-t;
+	background-color: $color_white;
+	z-index: $z-index_header;
 
 	.header_container {
 		height: 100%;
-		width: $width-desktop;
+		width: $width_desktop;
 		margin: auto;
-		@include flex(row, space-between, center);
+		@include flex(row, space-between);
 
 		.sections {
 			display: flex;

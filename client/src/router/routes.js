@@ -6,7 +6,7 @@ const routes = [
 	// default route
 	{
 		path: IndexRoute_Paths._,
-		component: async () => await import("@/components/Greetings/Greetings.vue"),
+		component: async () => await import("@/components/Greetings/GreetingsComp.vue"),
 		name: IndexRoute_Names.INDEX,
 		alias: [...IndexRoute_Alias],
 	},

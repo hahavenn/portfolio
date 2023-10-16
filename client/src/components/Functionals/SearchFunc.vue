@@ -23,8 +23,8 @@ import SearchIcon from "@/components/Icons/SearchIcon.vue";
 	}
 
 	input {
-		@include border-default($color: $color-default);
-		font-size: $font-size_default;
+		@include border-default($color: $color_default);
+		font-size: $font-size_small;
 		padding: 0 10px;
 		height: 40px;
 		padding-right: 36px;

@@ -12,6 +12,13 @@
 	border-radius: $radius;
 }
 
+@mixin border-right($color: transparent, $width: 2px) {
+	border-right: $width solid $color;
+}
+@mixin border-left($color: transparent, $width: 2px) {
+	border-left: $width solid $color;
+}
+
 /* elements size */
 
 // elements 100%
@@ -22,8 +29,8 @@
 
 // layout size
 @mixin layoutSize {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 }
 
 /* presets */
@@ -39,17 +46,51 @@
 /* hover */
 
 // hover border
-@mixin border-hover($color: $color-active-default) {
+@mixin border-hover($color: $color_active_default) {
 	border-color: $color;
 	@include transition-basic();
 }
 
+// hover link
+@mixin link-hover($color: $color_hover_link, $transition: $transition_default) {
+	&:hover {
+		cursor: pointer;
+		color: $color;
+		@include transition-basic($transition);
+	}
+}
+
 /* focus */
-@mixin input-focused($color: $color-active-default) {
+@mixin input-focused($color: $color_active_default) {
 	border-color: $color;
 }
 
 /* transition */
-@mixin transition-basic($time: $transition-default) {
+@mixin transition-basic($time: $transition_default) {
 	transition: all $time;
+}
+
+/* positions */
+@mixin pos-abs-l-t($position: absolute, $left: 0px, $top: 0px) {
+	position: $position;
+	left: $left;
+	top: $top;
+}
+
+@mixin pos-abs-r-t($position: absolute, $right: 0px, $top: 0px) {
+	position: $position;
+	right: $right;
+	top: $top;
+}
+
+@mixin pos-fix-l-t($position: fixed, $left: 0px, $top: 0px) {
+	position: $position;
+	left: $left;
+	top: $top;
+}
+
+@mixin pos-fix-r-t($position: fixed, $right: 0px, $top: 0px) {
+	position: $position;
+	right: $right;
+	top: $top;
 }

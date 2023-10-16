@@ -4,8 +4,8 @@
 
 <style scoped lang="scss">
 .logo {
-	font-weight: $font-weigth_bold;
-	font-size: $font-size_giant;
+	font-weight: $font-weight_bold;
+	font-size: $font-size_medium;
 	height: 100%;
 	padding: 10px 0;
 	cursor: pointer;

@@ -1,26 +1,38 @@
 <template>
 	<div class="layout">
-		<Header />
-		<div class="content">
+		<HeaderLayout />
+		<div class="page">
+			<LoaderFunc v-if="loadingState" />
 			<slot></slot>
 		</div>
+		<FooterLayout />
 	</div>
 </template>
 
 <script setup>
-import Header from "@/layouts/Header/Header.vue";
+import HeaderLayout from "@/layouts/Header/HeaderLayout.vue";
+import FooterLayout from "@/layouts/Footer/FooterLayout.vue";
+
+import LoaderFunc from "@/components/Functionals/LoaderFunc.vue";
+
+import useMainStore from "@/stores/mainStore";
+
+const mainStore = useMainStore();
+const loadingState = mainStore.loadingState;
 </script>
 
 <style lang="scss" scoped>
 .layout {
-	@include layoutSize;
-	position: absolute;
-	top: 0;
-	left: 0;
-	@include flex(column, center, center);
+	@include flex(column, space-between);
+	gap: 40px;
+	min-height: 100vh;
 
-	.content {
-		@include fullSize;
+	.page {
+		margin-top: $content_top_desktop;
+		width: $width_desktop;
+		height: fit-content;
+		flex-grow: 1;
+		@include flex;
 	}
 }
 </style>

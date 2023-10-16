@@ -1,37 +1,54 @@
+/* icon settings */
+
+// size
+$icon_size_default: 24px;
+
+/* colors */
+$color_default: #d2d2d2;
+$color_active_default: #7a7a7a;
+$color_hover_default: #dddddd;
+$color_hover_link: #696969;
+$color_white: #fff;
+$color_black: #000;
+$color_gray: #888888;
+
+/* sizes */
+$height_default: 40px;
+
+/* window sizes */
+$width_desktop: 1400px;
+$width_tablet: 786px;
+$width_mobile: 320px;
+
+/* transition times */
+$transition_default: 0.15s;
+
+/* heights */
+$height_header: 60px;
+
+/* widths */
+$width_panel: 300px;
+
+/* z-indexes */
+$z-index_header: 8000;
+
+/* positions */
+$content_top_desktop: calc($height_header * 1.5);
+
 /* font settings */
 
 // font-family
 $font-family_play: "Play";
 
 // font-size
-$font-size_default: 16px;
-$font-size_medium: 20px;
-$font-size_giant: 30px;
+$font-size_small: 16px;
+$font-size_default: 20px;
+$font-size_medium: 30px;
+$font-size_giant: 40px;
 
 // font-weight
-$font-weigth_regular: 400;
-$font-weigth_bold: 700;
+$font-weight_regular: 400;
+$font-weight_bold: 700;
 
 // font color
-$font-color_black: #000;
-
-/* icon settings */
-
-// size
-$icon-size_default: 24px;
-
-/* colors */
-$color-default: #d2d2d2;
-$color-active-default: #7a7a7a;
-$color-hover-default: #dddddd;
-
-/* sizes */
-$height-default: 40px;
-
-/* window sizes */
-$width-desktop: 1200px;
-$width-tablet: 786px;
-$width-mobile: 320px;
-
-/* transition times */
-$transition-default: 0.15s;
+$font-color_black: $color_black;

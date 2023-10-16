@@ -8,9 +8,7 @@
 
 <style lang="scss" scoped>
 .header_panel {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	@include flex(row, space-between);
 	gap: 10px;
 	height: 100%;
 }

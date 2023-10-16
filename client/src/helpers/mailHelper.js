@@ -1,13 +1,13 @@
-import emailError from "@/constants/errors/emailError";
-import { EMAIL_REG } from "@/constants/regularExpressions";
+import { ERROR_email } from "@/constants/errors";
+import { REG_email } from "@/constants/regulars";
 
 // check valid email or not
-export const isEmailValid = (email) => {
+export const isEmailValid = (email = "") => {
 	try {
-		if (new RegExp(EMAIL_REG).test(email)) {
+		if (new RegExp(REG_email).test(email)) {
 			return true;
 		} else {
-			throw emailError.INVALID;
+			throw ERROR_email.INVALID;
 		}
 	} catch (error) {
 		console.error(error);
@@ -15,7 +15,8 @@ export const isEmailValid = (email) => {
 	}
 };
 
-export const openMailToLink = (email) => {
+// open mailto link
+export const openMailToLink = (email = "") => {
 	if (isEmailValid(email)) {
 		return window.open(`mailto:${email}`);
 	} else {

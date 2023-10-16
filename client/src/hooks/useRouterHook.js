@@ -1,39 +1,52 @@
-import typeError from "@/constants/errors/typeError";
-import { isString } from "@/helpers/typeHelper";
+import { ERROR_type } from "@/constants/errors";
+import { isStringType } from "@/helpers/typeHelper";
 import router from "@/router";
 import { computed } from "vue";
+import { useRoute } from "vue-router";
 
 export default () => {
-	// router instance
-	const routerFullPath = computed(() => router.currentRoute.value.fullPath);
-	const routerHash = computed(() => router.currentRoute.value.hash);
-	const routerMatched = computed(() => router.currentRoute.value.matched);
-	const routerMeta = computed(() => router.currentRoute.value.meta);
-	const routerName = computed(() => router.currentRoute.value.name);
-	const routerParams = computed(() => router.currentRoute.value.params);
-	const routerPath = computed(() => router.currentRoute.value.path);
-	const routerQuery = computed(() => router.currentRoute.value.query);
-	const routerRedirectedFrom = computed(() => router.currentRoute.value.redirectedFrom);
+	// route instance
+	const route = useRoute();
+
+	// route parameters
+	const routeFullPath = computed(() => route.fullPath);
+	const routeHash = computed(() => route.hash);
+	const routeMatched = computed(() => route.matched);
+	const routeMeta = computed(() => route.meta);
+	const routeName = computed(() => route.name);
+	const routeParams = computed(() => route.params);
+	const routePath = computed(() => route.path);
+	const routeQuery = computed(() => route.query);
+	const routeRedirectedFrom = computed(() => route.redirectedFrom);
 
 	// router.push
 	function routerPush(location) {
-		if (!isString(location)) {
-			console.error("location is", typeError.NOT_STRING);
-		} else {
+		try {
+			if (!isStringType(location)) {
+				throw ERROR_type.UNDEFINED;
+			}
 			router.push(location);
+		} catch (error) {
+			console.error("location is", error);
 		}
 	}
 
+	// clear hash
+	function clearHash() {
+		route.hash = "";
+	}
+
 	return {
-		routerFullPath,
-		routerHash,
-		routerMatched,
-		routerMeta,
-		routerName,
-		routerParams,
-		routerPath,
-		routerQuery,
-		routerRedirectedFrom,
+		routeFullPath,
+		routeHash,
+		routeMatched,
+		routeMeta,
+		routeName,
+		routeParams,
+		routePath,
+		routeQuery,
+		routeRedirectedFrom,
 		routerPush,
+		clearHash,
 	};
 };

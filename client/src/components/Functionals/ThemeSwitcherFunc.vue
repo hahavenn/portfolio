@@ -17,7 +17,7 @@ import SunIcon from "@/components/Icons/SunIcon.vue";
 import MoonIcon from "@/components/Icons/MoonIcon.vue";
 import { ref } from "vue";
 
-import useStylesStore from "@/stores/Styles/stylesStore";
+import useStylesStore from "@/stores/stylesStore";
 
 const stylesStore = useStylesStore();
 
@@ -34,21 +34,21 @@ function toggler() {
 
 <style lang="scss" scoped>
 .switcher {
-	@include border-rounded($color-default, calc($height-default / 2));
+	@include border-rounded($color_default, calc($height_default / 2));
 	width: auto;
-	height: $height-default;
+	height: $height_default;
 	padding: 6px;
-	gap: 30px;
 	position: relative;
 	cursor: pointer;
-	@include flex(row, space-between);
+	@include flex(row, space-between, center);
+	gap: 30px;
 
 	&:hover {
-		@include border-hover($color-active-default);
+		@include border-hover($color_active_default);
 	}
 
 	.current {
-		@include border-rounded($color-active-default);
+		@include border-rounded($color_active_default);
 		position: absolute;
 		width: 30px;
 		height: 30px;
@@ -58,4 +58,4 @@ function toggler() {
 	}
 }
 </style>
-@/stores/Styles/stylesStore
+@/stores/Styles/stylesStore @/stores/Main/stylesStore

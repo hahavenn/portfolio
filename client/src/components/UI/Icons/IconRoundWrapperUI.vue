@@ -8,9 +8,9 @@
 
 <style lang="scss" scoped>
 .icon_wrapper {
-	height: $height-default;
-	width: $height-default;
-	@include border-rounded($color-default, calc($height-default / 2));
+	height: $height_default;
+	width: $height_default;
+	@include border-rounded($color_default, calc($height_default / 2));
 	@include flex;
 	cursor: pointer;
 
