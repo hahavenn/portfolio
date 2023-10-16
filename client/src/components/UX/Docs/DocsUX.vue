@@ -1,18 +1,14 @@
 <template>
 	<PageReadUX>
 		<template #leftPanel>
-			<div class="main_nav">
-				<template v-for="doc in docs_list">
-					<span
-						@click="setCurrentDoc(doc)"
-						:class="{ active: activeDoc.title == doc.title }"
-						>{{ doc.title }}</span
-					>
-				</template>
-			</div>
+			<NavPanel
+				:action="setCurrentDoc"
+				:list="docs_list"
+				:activeItem="activeDoc.index"
+			/>
 		</template>
 		<template #content>
-			<DocumentDocs :doc="activeDoc" />
+			<DocumentDocs :doc="activeDoc.doc" />
 		</template>
 		<template #rightPanel>
 			<div class="page_meta">
@@ -21,7 +17,7 @@
 					@click="changeCurrParagraph()"
 					>На этой странице:</a
 				>
-				<template v-for="c in activeDoc.content">
+				<template v-for="c in activeDoc.doc.content">
 					<a
 						:href="createParagraph(c.subtitle)"
 						@click="changeCurrParagraph(c.subtitle)"
@@ -39,10 +35,11 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 
 import DocumentDocs from "./DocumentDocs.vue";
 import PageReadUX from "@/components/UX/PageReadUX.vue";
+import NavPanel from "@/components/UX/NavPanel.vue";
 
 import { REG_not_letter_number } from "@/constants/regulars";
 
@@ -54,16 +51,28 @@ import useRouterHook from "@/hooks/useRouterHook";
 const { routerPush, routeHash, routePath } = useRouterHook();
 
 const props = defineProps({
-	docs_list: {
+	docs: {
 		type: Array,
 		required: true,
 	},
 });
 
-const activeDoc = ref(props.docs_list[0]);
+const activeDoc = ref({
+	doc: props.docs[0],
+	index: 0,
+});
 
-function setCurrentDoc(doc) {
-	activeDoc.value = doc;
+const docs_list = computed(() => {
+	let list = [];
+	for (let doc of props.docs) {
+		list.push(doc.title);
+	}
+	return list;
+});
+
+function setCurrentDoc(i) {
+	activeDoc.value.doc = props.docs[i];
+	activeDoc.value.index = i;
 	scrollToTop();
 	currParagraph.value = null;
 }
@@ -86,6 +95,7 @@ function changeCurrParagraph(newParagraph) {
 
 onMounted(() => {
 	if (routeHash.value) currParagraph.value = routeHash.value;
+	console.log(docs_list.value);
 });
 
 /*
@@ -97,7 +107,6 @@ onMounted(() => {
 
 <style scoped lang="scss">
 $padding_space: 22px;
-.main_nav,
 .page_meta {
 	font-size: $font-size_small;
 	@include flex(column, flex-start, flex-start);
@@ -114,12 +123,6 @@ $padding_space: 22px;
 	.active {
 		color: $color_black;
 	}
-}
-
-.main_nav {
-	overflow-x: hidden;
-	overflow-y: auto;
-	padding-right: $padding_space;
 }
 
 .page_meta {

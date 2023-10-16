@@ -1,6 +1,6 @@
 <template>
 	<div class="about_container">
-		<DocsUX :docs_list="[textAbout]"> </DocsUX>
+		<DocsUX :docs="[textAbout]"> </DocsUX>
 	</div>
 </template>
 
