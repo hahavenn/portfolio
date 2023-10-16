@@ -11,36 +11,36 @@
 			<DocumentDocs :doc="activeDoc.doc" />
 		</template>
 		<template #rightPanel>
-			<div class="page_meta">
-				<a
-					class="meta"
-					@click="changeCurrParagraph()"
-					>На этой странице:</a
-				>
-				<template v-for="c in activeDoc.doc.content">
-					<a
-						:href="createParagraph(c.subtitle)"
-						@click="changeCurrParagraph(c.subtitle)"
-						:class="{
-							active: currParagraph == createParagraph(c.subtitle),
-						}"
-					>
-						<span>></span>
-						{{ c.subtitle }}
-					</a>
-				</template>
-			</div>
+			<PageMeta :meta="[link_meta]" />
 		</template>
 	</PageReadUX>
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from "vue";
+/*
+	props:
+		docs - array of documents, which should be shown
+
+	NavPanel:
+		list - list of docs' titles,
+		action - action, that will be executed on click of doc's title
+		activeItem - current active doc (own index)
+
+	DocumentDocs:
+		doc - the document, you want to display
+
+	PageMeta:
+*/
+
+import { computed, ref } from "vue";
 
 import DocumentDocs from "./DocumentDocs.vue";
 import PageReadUX from "@/components/UX/PageReadUX.vue";
 import NavPanel from "@/components/UX/NavPanel.vue";
+import PageMeta from "@/components/UX/PageMeta.vue";
 
+import { PHRASE_PAGE } from "@/constants/phrases";
+import { TYPE_INSTANCES } from "@/constants/types";
 import { REG_not_letter_number } from "@/constants/regulars";
 
 import { strLowerRegexNoSpace } from "@/helpers/textHelper";
@@ -48,8 +48,7 @@ import { scrollToTop } from "@/helpers/appHelper";
 
 import useRouterHook from "@/hooks/useRouterHook";
 
-const { routerPush, routeHash, routePath } = useRouterHook();
-
+/* define common instances */
 const props = defineProps({
 	docs: {
 		type: Array,
@@ -57,11 +56,15 @@ const props = defineProps({
 	},
 });
 
+const { routerPush, routeHash, routePath } = useRouterHook();
+
+// current active doc to display
 const activeDoc = ref({
 	doc: props.docs[0],
 	index: 0,
 });
 
+// list of docs' titles
 const docs_list = computed(() => {
 	let list = [];
 	for (let doc of props.docs) {
@@ -70,85 +73,52 @@ const docs_list = computed(() => {
 	return list;
 });
 
-function setCurrentDoc(i) {
-	activeDoc.value.doc = props.docs[i];
-	activeDoc.value.index = i;
+// setting current doc
+function setCurrentDoc(index) {
+	activeDoc.value = {
+		doc: props.docs[index],
+		index: index,
+	};
+	resetCurrParagraph();
+}
+
+// define current paragraph with init value
+const currParagraph = ref(routeHash.value ? routeHash.value : null);
+
+// reseting current paragraph
+function resetCurrParagraph() {
+	if (routeHash.value) routerPush(routePath.value);
 	scrollToTop();
 	currParagraph.value = null;
+	link_meta.value.activeChild = currParagraph.value;
 }
 
-const currParagraph = ref();
-
-function createParagraph(subtitle) {
-	return "#" + strLowerRegexNoSpace(subtitle, REG_not_letter_number);
+// setting current paragraph
+function setCurrParagraph(paragraph) {
+	currParagraph.value = "#" + strLowerRegexNoSpace(paragraph, REG_not_letter_number);
+	link_meta.value.activeChild = currParagraph.value;
 }
 
-function changeCurrParagraph(newParagraph) {
-	if (newParagraph) {
-		currParagraph.value = "#" + strLowerRegexNoSpace(newParagraph, REG_not_letter_number);
-	} else {
-		if (routeHash.value) routerPush(routePath.value);
-		scrollToTop();
-		currParagraph.value = null;
+// define list of paragraps on the page
+const pageParagraphs = computed(() => {
+	let paragraphs = [];
+
+	for (let paragraph of activeDoc.value.doc.content) {
+		paragraphs.push(paragraph.subtitle);
 	}
-}
 
-onMounted(() => {
-	if (routeHash.value) currParagraph.value = routeHash.value;
-	console.log(docs_list.value);
+	return paragraphs;
 });
 
-/*
-    #main_nav - list of articles
-    #content - main content
-    #page_meta - page's logic switchers | article's navigation
-*/
+// define meta instance with doc's paragraphs
+const link_meta = ref({
+	type: TYPE_INSTANCES.LINK,
+	title: PHRASE_PAGE.ON_THIS_PAGE,
+	titleAction: resetCurrParagraph,
+	children: pageParagraphs.value,
+	childAction: setCurrParagraph,
+	activeChild: currParagraph.value,
+});
 </script>
 
-<style scoped lang="scss">
-$padding_space: 22px;
-.page_meta {
-	font-size: $font-size_small;
-	@include flex(column, flex-start, flex-start);
-	gap: 5px;
-	width: 100%;
-
-	span,
-	a {
-		padding: 3px 0;
-		color: $color_gray;
-		@include link-hover($color_black);
-	}
-
-	.active {
-		color: $color_black;
-	}
-}
-
-.page_meta {
-	padding-left: $padding_space;
-
-	a {
-		text-decoration: none;
-		span {
-			display: none;
-		}
-	}
-
-	.meta {
-		color: $font-color_black;
-		text-decoration: 1px solid $font-color_black underline;
-	}
-
-	.active {
-		color: $font-color_black;
-		position: relative;
-
-		span {
-			display: block;
-			color: inherit;
-			@include pos-abs-l-t($left: -10px);
-		}
-	}
-}
-</style>
+<style scoped lang="scss"></style>
