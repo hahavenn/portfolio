@@ -3,7 +3,7 @@
 		<template v-for="(item, item_index) in list">
 			<span
 				@click="action(item_index)"
-				:class="{ active: item_index == activeItem }"
+				:class="{ active: item_index === activeItem }"
 				>{{ item }}</span
 			>
 		</template>
@@ -18,6 +18,7 @@
         activeItem - the index of an active item in list
 */
 
+/* define common instances */
 const props = defineProps({
 	list: {
 		type: Array,
@@ -25,9 +26,11 @@ const props = defineProps({
 	},
 	action: {
 		type: Function,
+		default: () => {},
 	},
 	activeItem: {
 		type: Number,
+		default: null,
 	},
 });
 </script>
