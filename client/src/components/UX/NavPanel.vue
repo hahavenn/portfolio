@@ -42,8 +42,7 @@ const props = defineProps({
 	overflow-y: auto;
 	padding-right: 22px;
 
-	span,
-	a {
+	span {
 		padding: 3px 0;
 		color: $color_gray;
 		@include link-hover($color_black);
