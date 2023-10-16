@@ -1,7 +1,7 @@
 <template>
 	<PageReadUX>
 		<template #leftPanel>
-			<NavPanel
+			<NavPanelUX
 				:action="setCurrentDoc"
 				:list="docs_list"
 				:activeItem="activeDoc.index"
@@ -21,7 +21,7 @@
 	props:
 		docs - array of documents, which should be shown
 
-	NavPanel:
+	NavPanelUX:
 		list - list of docs' titles,
 		action - action, that will be executed on click of doc's title
 		activeItem - current active doc (own index)
@@ -36,7 +36,7 @@ import { computed, ref } from "vue";
 
 import DocumentDocs from "./DocumentDocs.vue";
 import PageReadUX from "@/components/UX/PageReadUX.vue";
-import NavPanel from "@/components/UX/NavPanel.vue";
+import NavPanelUX from "@/components/UX/NavPanelUX.vue";
 import PageMeta from "@/components/UX/PageMeta.vue";
 
 import { PHRASE_PAGE } from "@/constants/phrases";
