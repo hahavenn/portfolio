@@ -11,7 +11,7 @@
 			<DocumentDocs :doc="activeDoc.doc" />
 		</template>
 		<template #rightPanel>
-			<PageMeta :meta="[link_meta]" />
+			<PageMetaUX :meta="[link_meta]" />
 		</template>
 	</PageReadUX>
 </template>
@@ -29,7 +29,7 @@
 	DocumentDocs:
 		doc - the document, you want to display
 
-	PageMeta:
+	PageMetaUX:
 */
 
 import { computed, ref } from "vue";
@@ -37,7 +37,7 @@ import { computed, ref } from "vue";
 import DocumentDocs from "./DocumentDocs.vue";
 import PageReadUX from "@/components/UX/PageReadUX.vue";
 import NavPanelUX from "@/components/UX/NavPanelUX.vue";
-import PageMeta from "@/components/UX/PageMeta.vue";
+import PageMetaUX from "@/components/UX/PageMetaUX.vue";
 
 import { PHRASE_PAGE } from "@/constants/phrases";
 import { TYPE_INSTANCES } from "@/constants/types";
