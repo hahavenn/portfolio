@@ -33,7 +33,7 @@ export default () => {
 
 	// clear hash
 	function clearHash() {
-		route.hash = "";
+		if (routeHash.value) routerPush(routePath.value);
 	}
 
 	return {

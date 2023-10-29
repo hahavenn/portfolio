@@ -60,7 +60,7 @@ const props = defineProps({
 	},
 });
 
-const { routerPush, routeHash, routePath } = useRouterHook();
+const { routerPush, routeHash, clearHash } = useRouterHook();
 
 // current active doc to display
 const activeDoc = ref({
@@ -93,7 +93,7 @@ const currParagraph = ref(routeHash.value ? routeHash.value : null);
 function resetCurrParagraph() {
 	isTitleClicked.value = true;
 
-	if (routeHash.value) routerPush(routePath.value);
+	clearHash();
 	scrollToTop();
 
 	currParagraph.value = null;
