@@ -2,24 +2,24 @@
 	<header>
 		<div class="header_container">
 			<PanelHeader>
-				<LogoUI @click="routerPush(IndexRoute_Paths._)" />
+				<LogoUI @click="routerPush(INDEX_ROUTE_PATHS._)" />
 				<SearchUX />
 			</PanelHeader>
 			<PanelHeader>
 				<div class="sections">
-					<SectionInfoHeader @click="routerPush(AboutRoute_Paths._)"
+					<SectionInfoHeader @click="routerPush(ABOUT_ROUTE_PATHS._)"
 						>Обо мне</SectionInfoHeader
 					>
 					<SectionInfoHeader>Что умею</SectionInfoHeader>
 				</div>
 				<ThemeSwitcherUX />
-				<IconRoundWrapperUI @click="openGoToLink(LINK_hahaSocials.GITHUB)">
+				<IconRoundWrapperUI @click="openGoToLink(LINK_HAHA_SOCIALS.GITHUB)">
 					<GithubIcon />
 				</IconRoundWrapperUI>
-				<IconRoundWrapperUI @click="openGoToLink(LINK_hahaSocials.TELEGRAM)">
+				<IconRoundWrapperUI @click="openGoToLink(LINK_HAHA_SOCIALS.TELEGRAM)">
 					<TelegramIcon />
 				</IconRoundWrapperUI>
-				<IconRoundWrapperUI @click="openMailToLink(LINK_hahaSocials.MAIL)">
+				<IconRoundWrapperUI @click="openMailToLink(LINK_HAHA_SOCIALS.MAIL)">
 					<MailIcon />
 				</IconRoundWrapperUI>
 			</PanelHeader>
@@ -44,9 +44,9 @@ import MailIcon from "@/components/Icons/MailIcon.vue";
 import { openGoToLink } from "@/helpers/linkHelper";
 import { openMailToLink } from "@/helpers/mailHelper";
 
-import { LINK_hahaSocials } from "@/constants/links";
-import { IndexRoute_Paths } from "@/router/indexConstants";
-import { AboutRoute_Paths } from "@/router/About/aboutConstants";
+import { LINK_HAHA_SOCIALS } from "@/constants/links";
+import { INDEX_ROUTE_PATHS } from "@/router/indexConstants";
+import { ABOUT_ROUTE_PATHS } from "@/router/About/aboutConstants";
 
 import useRouterHook from "@/hooks/useRouterHook";
 

@@ -40,7 +40,7 @@
     }
 */
 
-import { REG_not_letter_number } from "@/constants/regulars";
+import { REG_NOT_LETTER_NUMBER } from "@/constants/regulars";
 import { TYPE_INSTANCES } from "@/constants/types";
 
 import { strLowerRegexNoSpace } from "@/helpers/textHelper";
@@ -57,7 +57,7 @@ const props = defineProps({
 
 // make link to title
 function createParagraph(title) {
-	return "#" + strLowerRegexNoSpace(title, REG_not_letter_number);
+	return "#" + strLowerRegexNoSpace(title, REG_NOT_LETTER_NUMBER);
 }
 </script>
 

@@ -1,11 +1,11 @@
-import { AboutRoute_Alias, AboutRoute_Names, AboutRoute_Paths } from "./aboutConstants";
+import { ABOUT_ROUTE_ALIAS, ABOUT_ROUTE_NAMES, ABOUT_ROUTE_PATHS } from "./aboutConstants";
 
 // about route
 export default [
 	{
-		path: AboutRoute_Paths._,
+		path: ABOUT_ROUTE_PATHS._,
 		component: async () => await import("@/components/About/AboutComp.vue"),
-		alias: [...AboutRoute_Alias],
-		name: AboutRoute_Names.ABOUT,
+		alias: [...ABOUT_ROUTE_ALIAS],
+		name: ABOUT_ROUTE_NAMES.ABOUT,
 	},
 ];

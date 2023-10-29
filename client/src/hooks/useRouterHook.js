@@ -1,4 +1,4 @@
-import { ERROR_type } from "@/constants/errors";
+import { ERROR_TYPE } from "@/constants/errors";
 import { isStringType } from "@/helpers/typeHelper";
 import router from "@/router";
 import { computed } from "vue";
@@ -23,7 +23,7 @@ export default () => {
 	function routerPush(location) {
 		try {
 			if (!isStringType(location)) {
-				throw ERROR_type.UNDEFINED;
+				throw ERROR_TYPE.UNDEFINED;
 			}
 			router.push(location);
 		} catch (error) {

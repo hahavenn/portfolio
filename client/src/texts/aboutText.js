@@ -1,5 +1,5 @@
-import { LINK_myHabrArticles } from "@/constants/links";
-import { TYPE_HTML, TYPE_semanticHTML } from "@/constants/types";
+import { LINK_MY_HABR_ARTICLES } from "@/constants/links";
+import { TYPE_HTML, TYPE_SEMANTIC_HTML } from "@/constants/types";
 
 export default {
 	title: "Привет, меня зовут Влад!",
@@ -8,7 +8,7 @@ export default {
 			subtitle: "Кто я такой1?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -16,7 +16,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -25,7 +25,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -39,7 +39,7 @@ export default {
 			subtitle: "Кто я такой2?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -47,7 +47,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -56,7 +56,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -70,7 +70,7 @@ export default {
 			subtitle: "Кто я такой3?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -78,7 +78,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -87,7 +87,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -101,7 +101,7 @@ export default {
 			subtitle: "Кто я такой4?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -109,7 +109,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -118,7 +118,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -132,7 +132,7 @@ export default {
 			subtitle: "Кто я такой5?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -140,7 +140,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -149,7 +149,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -163,7 +163,7 @@ export default {
 			subtitle: "Кто я такой6?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -171,7 +171,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -180,7 +180,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -194,7 +194,7 @@ export default {
 			subtitle: "Кто я такой7?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -202,7 +202,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -211,7 +211,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -225,7 +225,7 @@ export default {
 			subtitle: "Кто я такой8?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -233,7 +233,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -242,7 +242,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -256,7 +256,7 @@ export default {
 			subtitle: "Кто я такой9?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -264,7 +264,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -273,7 +273,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -287,7 +287,7 @@ export default {
 			subtitle: "Кто я такой10?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -295,7 +295,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -304,7 +304,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -318,7 +318,7 @@ export default {
 			subtitle: "Кто я такой11?",
 			paragraph: [
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -326,7 +326,7 @@ export default {
 						},
 						{
 							type: TYPE_HTML.LINK,
-							value: LINK_myHabrArticles[0],
+							value: LINK_MY_HABR_ARTICLES[0],
 						},
 						{
 							type: TYPE_HTML.TEXT_PLAIN,
@@ -335,7 +335,7 @@ export default {
 					],
 				},
 				{
-					type: TYPE_semanticHTML.TEXT,
+					type: TYPE_SEMANTIC_HTML.TEXT,
 					value: [
 						{
 							type: TYPE_HTML.TEXT_PLAIN,

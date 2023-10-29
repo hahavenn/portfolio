@@ -1,14 +1,14 @@
 // route names
-const AboutRoute_Names = {
+const ABOUT_ROUTE_NAMES = {
 	ABOUT: "about",
 };
 
 // route paths
-const AboutRoute_Paths = {
+const ABOUT_ROUTE_PATHS = {
 	_: "/about",
 };
 
 // route alias
-const AboutRoute_Alias = ["/info"];
+const ABOUT_ROUTE_ALIAS = ["/info"];
 
-export { AboutRoute_Names, AboutRoute_Paths, AboutRoute_Alias };
+export { ABOUT_ROUTE_NAMES, ABOUT_ROUTE_PATHS, ABOUT_ROUTE_ALIAS };

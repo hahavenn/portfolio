@@ -1,14 +1,14 @@
 // route names
-const IndexRoute_Names = {
+const INDEX_ROUTE_NAMES = {
 	INDEX: "index",
 };
 
 // route paths
-const IndexRoute_Paths = {
+const INDEX_ROUTE_PATHS = {
 	_: "/",
 };
 
 // route alias
-const IndexRoute_Alias = ["/home", "/index", "/main"];
+const INDEX_ROUTE_ALIAS = ["/home", "/index", "/main"];
 
-export { IndexRoute_Names, IndexRoute_Alias, IndexRoute_Paths };
+export { INDEX_ROUTE_NAMES, INDEX_ROUTE_ALIAS, INDEX_ROUTE_PATHS };

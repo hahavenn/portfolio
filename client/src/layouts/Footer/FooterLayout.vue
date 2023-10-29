@@ -1,7 +1,7 @@
 <template>
 	<footer>
 		<a
-			:href="LINK_hahaSocials.TELEGRAM"
+			:href="LINK_HAHA_SOCIALS.TELEGRAM"
 			target="_blank"
 		>
 			@hahavenn
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { LINK_hahaSocials } from "@/constants/links";
+import { LINK_HAHA_SOCIALS } from "@/constants/links";
 </script>
 
 <style scoped lang="scss">

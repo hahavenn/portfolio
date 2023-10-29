@@ -11,7 +11,7 @@
 			<template v-for="data in c.paragraph">
 				<div
 					class="data"
-					v-if="data.type === TYPE_semanticHTML.TEXT"
+					v-if="data.type === TYPE_SEMANTIC_HTML.TEXT"
 				>
 					<p>
 						<template v-for="d in data.value">
@@ -49,7 +49,7 @@
 
 import { onBeforeMount, onMounted, reactive, ref } from "vue";
 
-import { TYPE_semanticHTML, TYPE_HTML } from "@/constants/types";
+import { TYPE_SEMANTIC_HTML, TYPE_HTML } from "@/constants/types";
 
 import { strLowerRegexNoSpace } from "@/helpers/textHelper";
 

@@ -1,8 +1,8 @@
 // email regular expression
-const REG_email = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z]+)/g;
+const REG_EMAIL = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z]+)/g;
 
 // letters and numbers
-const REG_letter_number = /[\w]/g;
-const REG_not_letter_number = /[\`\~\!\@\"\#\№\$\;\:\%^\&\?\*\(\)\-\+\=\{\}\[\]\'\<\>\,\.\/\|\\]/g;
+const REG_LETTER_NUMBER = /[\w]/g;
+const REG_NOT_LETTER_NUMBER = /[\`\~\!\@\"\#\№\$\;\:\%^\&\?\*\(\)\-\+\=\{\}\[\]\'\<\>\,\.\/\|\\]/g;
 
-export { REG_email, REG_letter_number, REG_not_letter_number };
+export { REG_EMAIL, REG_LETTER_NUMBER, REG_NOT_LETTER_NUMBER };

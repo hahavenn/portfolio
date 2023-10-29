@@ -18,7 +18,7 @@ export const TYPE_HTML = {
 };
 
 // types of semantic HTML element
-export const TYPE_semanticHTML = {
+export const TYPE_SEMANTIC_HTML = {
 	PARAGRAPH: "paragraph",
 	CODE: "code",
 	TEXT: "text",

@@ -1,12 +1,12 @@
 <template>
 	<div class="greeting_container">
 		<span>Привет, я Влад!</span>
-		<RouterLink :to="AboutRoute_Paths._">Давайте знакомиться ></RouterLink>
+		<RouterLink :to="ABOUT_ROUTE_PATHS._">Давайте знакомиться ></RouterLink>
 	</div>
 </template>
 
 <script setup>
-import { AboutRoute_Paths } from "@/router/About/aboutConstants";
+import { ABOUT_ROUTE_PATHS } from "@/router/About/aboutConstants";
 </script>
 
 <style scoped lang="scss">
