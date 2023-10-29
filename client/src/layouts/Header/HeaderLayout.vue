@@ -1,16 +1,16 @@
 <template>
 	<header>
 		<div class="header_container">
-			<HeaderPanel>
+			<PanelHeader>
 				<LogoUI @click="routerPush(IndexRoute_Paths._)" />
 				<SearchUX />
-			</HeaderPanel>
-			<HeaderPanel>
+			</PanelHeader>
+			<PanelHeader>
 				<div class="sections">
-					<HeaderSectionInfo @click="routerPush(AboutRoute_Paths._)"
-						>Обо мне</HeaderSectionInfo
+					<SectionInfoHeader @click="routerPush(AboutRoute_Paths._)"
+						>Обо мне</SectionInfoHeader
 					>
-					<HeaderSectionInfo>Что умею</HeaderSectionInfo>
+					<SectionInfoHeader>Что умею</SectionInfoHeader>
 				</div>
 				<ThemeSwitcherUX />
 				<IconRoundWrapperUI @click="openGoToLink(LINK_hahaSocials.GITHUB)">
@@ -22,14 +22,14 @@
 				<IconRoundWrapperUI @click="openMailToLink(LINK_hahaSocials.MAIL)">
 					<MailIcon />
 				</IconRoundWrapperUI>
-			</HeaderPanel>
+			</PanelHeader>
 		</div>
 	</header>
 </template>
 
 <script setup>
-import HeaderPanel from "./HeaderPanel.vue";
-import HeaderSectionInfo from "./HeaderSectionInfo.vue";
+import PanelHeader from "./PanelHeader.vue";
+import SectionInfoHeader from "./SectionInfoHeader.vue";
 
 import ThemeSwitcherUX from "@/components/UX/ThemeSwitcherUX.vue";
 import SearchUX from "@/components/UX/SearchUX.vue";
