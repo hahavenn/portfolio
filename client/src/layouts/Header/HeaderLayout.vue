@@ -3,7 +3,7 @@
 		<div class="header_container">
 			<HeaderPanel>
 				<LogoUI @click="routerPush(IndexRoute_Paths._)" />
-				<SearchFunc />
+				<SearchUX />
 			</HeaderPanel>
 			<HeaderPanel>
 				<div class="sections">
@@ -12,7 +12,7 @@
 					>
 					<HeaderSectionInfo>Что умею</HeaderSectionInfo>
 				</div>
-				<ThemeSwitcherFunc />
+				<ThemeSwitcherUX />
 				<IconRoundWrapperUI @click="openGoToLink(LINK_hahaSocials.GITHUB)">
 					<GithubIcon />
 				</IconRoundWrapperUI>
@@ -31,8 +31,8 @@
 import HeaderPanel from "./HeaderPanel.vue";
 import HeaderSectionInfo from "./HeaderSectionInfo.vue";
 
-import ThemeSwitcherFunc from "@/components/Functionals/ThemeSwitcherFunc.vue";
-import SearchFunc from "@/components/Functionals/SearchFunc.vue";
+import ThemeSwitcherUX from "@/components/UX/ThemeSwitcherUX.vue";
+import SearchUX from "@/components/UX/SearchUX.vue";
 
 import IconRoundWrapperUI from "@/components/UI/Icons/IconRoundWrapperUI.vue";
 import LogoUI from "@/components/UI/LogoUI.vue";
