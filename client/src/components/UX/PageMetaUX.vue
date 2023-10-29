@@ -11,7 +11,7 @@
 				<template v-for="link in field.children">
 					<a
 						:href="createParagraph(link)"
-						@click="field.childAction(link)"
+						@click="field.childAction(link, true)"
 						:class="{
 							active: field.activeChild == createParagraph(link),
 						}"
