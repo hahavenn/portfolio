@@ -58,4 +58,3 @@ function toggler() {
 	}
 }
 </style>
-@/stores/Styles/stylesStore @/stores/Main/stylesStore
