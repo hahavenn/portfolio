@@ -137,7 +137,7 @@ onBeforeMount(() => {
 	.subtitle {
 		position: relative;
 		div {
-			top: -$height_header * 1.5 - ($font-size_small) / 2 - 2px;
+			top: calc($height_header * -1.5 - ($font-size_small) / 2 - 2px);
 			position: absolute;
 
 			// if you want to see, how to scroll work - uncomment code below
