@@ -4,7 +4,11 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+/* 
+	wrapper for icons
+*/
+</script>
 
 <style lang="scss" scoped>
 .icon_wrapper {

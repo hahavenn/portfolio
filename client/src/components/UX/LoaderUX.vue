@@ -4,7 +4,11 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+/* 
+	basic round loader
+*/
+</script>
 
 <style scoped lang="scss">
 $loader-width: 6px;

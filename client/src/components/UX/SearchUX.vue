@@ -9,6 +9,10 @@
 </template>
 
 <script setup>
+/* 
+	search component, not full ready
+*/
+
 import SearchIcon from "@/components/Icons/SearchIcon.vue";
 </script>
 

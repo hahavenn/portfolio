@@ -6,6 +6,9 @@
 </template>
 
 <script setup>
+/* 
+	greeting component
+*/
 import { ABOUT_ROUTE_PATHS } from "@/router/About/aboutConstants";
 </script>
 

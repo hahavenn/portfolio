@@ -34,6 +34,7 @@
 		doc - the document, you want to display
 
 	MetaPage:
+		meta - page's meta, functions, table of contents
 */
 
 import { computed, onBeforeMount, onMounted, ref } from "vue";

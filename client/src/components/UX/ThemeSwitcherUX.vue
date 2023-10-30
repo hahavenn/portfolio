@@ -13,11 +13,17 @@
 </template>
 
 <script setup>
+/* 
+	theme switcher (will be UX switcher)
+*/
+
 import SunIcon from "@/components/Icons/SunIcon.vue";
 import MoonIcon from "@/components/Icons/MoonIcon.vue";
 import { ref } from "vue";
 
 import useStylesStore from "@/stores/stylesStore";
+
+/* define common instances */
 
 const stylesStore = useStylesStore();
 

@@ -1,10 +1,14 @@
 <template>
 	<div class="about_container">
-		<DocsUX :docs="[textAbout]"> </DocsUX>
+		<DocsUX :docs="[textAbout]" />
 	</div>
 </template>
 
 <script setup>
+/* 
+	about component 
+*/
+
 import DocsUX from "@/components/UX/Docs/DocsUX.vue";
 
 import textAbout from "@/texts/aboutText";

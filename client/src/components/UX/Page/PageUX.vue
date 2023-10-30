@@ -23,14 +23,22 @@
 </template>
 
 <script setup>
+/* 
+	<aside> - using for left and right panels
+	div.content - using for main content
+*/
 import { onMounted, reactive, ref } from "vue";
 
+/* define common instances */
 const readingRef = ref(null);
 const leftPanelStyle = reactive({ left: "" });
 const rightPanelStyle = reactive({ left: "" });
 const rightPanelRef = ref(null);
 
+/* hooks */
+
 onMounted(() => {
+	// calc position of panels
 	leftPanelStyle.left = readingRef.value.getBoundingClientRect().left + "px";
 	rightPanelStyle.left =
 		readingRef.value.getBoundingClientRect().right -
