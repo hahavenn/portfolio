@@ -4,12 +4,12 @@
 			<NavPage
 				:action="setCurrentDoc"
 				:list="docs_list"
-				:activeItem="activeDoc.index"
+				:activeItem="currDoc.index"
 			/>
 		</template>
 		<template #content>
 			<DocumentDocs
-				:doc="activeDoc.doc"
+				:doc="currDoc.doc"
 				:paragraphSetter="setCurrParagraph"
 				:currentParagraph="currParagraph"
 			/>
@@ -64,7 +64,7 @@ const props = defineProps({
 const { routerPush, routeHash, clearHash } = useRouterHook();
 
 // current active doc to display
-const activeDoc = ref({
+const currDoc = ref({
 	doc: props.docs[0],
 	index: 0,
 });
@@ -80,7 +80,7 @@ const docs_list = computed(() => {
 
 // setting current doc
 function setCurrentDoc(index) {
-	activeDoc.value = {
+	currDoc.value = {
 		doc: props.docs[index],
 		index: index,
 	};
@@ -127,7 +127,7 @@ function setCurrParagraph(paragraph, isClicked) {
 const pageParagraphs = computed(() => {
 	let paragraphs = [];
 
-	for (let paragraph of activeDoc.value.doc.content) {
+	for (let paragraph of currDoc.value.doc.content) {
 		paragraphs.push(paragraph.subtitle);
 	}
 
