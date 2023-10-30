@@ -1,7 +1,7 @@
 <template>
-	<PageReadUX>
+	<PageUX>
 		<template #leftPanel>
-			<NavPanelUX
+			<NavPage
 				:action="setCurrentDoc"
 				:list="docs_list"
 				:activeItem="activeDoc.index"
@@ -15,9 +15,9 @@
 			/>
 		</template>
 		<template #rightPanel>
-			<PageMetaUX :meta="[link_meta]" />
+			<MetaPage :meta="[link_meta]" />
 		</template>
-	</PageReadUX>
+	</PageUX>
 </template>
 
 <script setup>
@@ -25,7 +25,7 @@
 	props:
 		docs - array of documents, which should be shown
 
-	NavPanelUX:
+	NavPage:
 		list - list of docs' titles,
 		action - action, that will be executed on click of doc's title
 		activeItem - current active doc (own index)
@@ -33,15 +33,15 @@
 	DocumentDocs:
 		doc - the document, you want to display
 
-	PageMetaUX:
+	MetaPage:
 */
 
 import { computed, onBeforeMount, onMounted, ref } from "vue";
 
 import DocumentDocs from "./DocumentDocs.vue";
-import PageReadUX from "@/components/UX/PageReadUX.vue";
-import NavPanelUX from "@/components/UX/NavPanelUX.vue";
-import PageMetaUX from "@/components/UX/PageMetaUX.vue";
+import PageUX from "@/components/UX/Page/PageUX.vue";
+import NavPage from "@/components/UX/Page/NavPage.vue";
+import MetaPage from "@/components/UX/Page/MetaPage.vue";
 
 import { PHRASE_PAGE } from "@/constants/phrases";
 import { TYPE_INSTANCES } from "@/constants/types";
