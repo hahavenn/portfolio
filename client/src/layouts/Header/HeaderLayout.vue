@@ -7,7 +7,7 @@
 			</PanelHeader>
 			<PanelHeader>
 				<div class="sections">
-					<SectionInfoHeader @click="routerPush(ABOUT_ROUTE_PATHS._)"
+					<SectionInfoHeader @click="routerPush(ABOUT_ROUTE_PATHS._, true)"
 						>Обо мне</SectionInfoHeader
 					>
 					<SectionInfoHeader>Что умею</SectionInfoHeader>

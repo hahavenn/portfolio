@@ -1,6 +1,8 @@
 import { ERROR_TYPE } from "@/constants/errors";
 import { TYPE_JS } from "@/constants/types";
 
+import { scrollToTop } from "@/helpers/appHelper";
+
 import router from "@/router";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
@@ -21,11 +23,14 @@ export default () => {
 	const routeRedirectedFrom = computed(() => route.redirectedFrom);
 
 	// router.push
-	function routerPush(location) {
+	function routerPush(location, needScroll) {
 		try {
 			if (typeof location !== TYPE_JS.STRING) {
 				throw ERROR_TYPE.NOT_STRING;
-			} else router.push(location);
+			} else {
+				router.push(location);
+				if (needScroll && window.scrollY) scrollToTop();
+			}
 		} catch (error) {
 			console.error("location is", error);
 		}
