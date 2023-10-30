@@ -12,7 +12,14 @@
 					>
 					<SectionInfoHeader>Что умею</SectionInfoHeader>
 				</div>
-				<ThemeSwitcherUX />
+				<SwitcherUX :toggler="stylesStore.changeThemeState">
+					<template #left>
+						<SunIcon />
+					</template>
+					<template #right>
+						<MoonIcon />
+					</template>
+				</SwitcherUX>
 				<IconRoundWrapperUI @click="openGoToLink(LINK_HAHA_SOCIALS.GITHUB)">
 					<GithubIcon />
 				</IconRoundWrapperUI>
@@ -31,11 +38,13 @@
 import PanelHeader from "./PanelHeader.vue";
 import SectionInfoHeader from "./SectionInfoHeader.vue";
 
-import ThemeSwitcherUX from "@/components/UX/ThemeSwitcherUX.vue";
+import SwitcherUX from "@/components/UX/SwitcherUX.vue";
 import SearchUX from "@/components/UX/SearchUX.vue";
 
 import IconRoundWrapperUI from "@/components/UI/Icons/IconRoundWrapperUI.vue";
 import LogoUI from "@/components/UI/LogoUI.vue";
+import SunIcon from "@/components/Icons/SunIcon.vue";
+import MoonIcon from "@/components/Icons/MoonIcon.vue";
 
 import GithubIcon from "@/components/Icons/GithubIcon.vue";
 import TelegramIcon from "@/components/Icons/TelegramIcon.vue";
@@ -49,8 +58,11 @@ import { INDEX_ROUTE_PATHS } from "@/router/indexConstants";
 import { ABOUT_ROUTE_PATHS } from "@/router/About/aboutConstants";
 
 import useRouterHook from "@/hooks/useRouterHook";
+import useStylesStore from "@/stores/stylesStore";
 
 const { routerPush } = useRouterHook();
+
+const stylesStore = useStylesStore();
 </script>
 
 <style lang="scss" scoped>
