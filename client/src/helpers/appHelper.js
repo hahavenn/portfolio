@@ -1,11 +1,9 @@
-import { isArrayType } from "./typeHelper";
-
 /* this helper contains useful functions */
 
 // execute function with callback
 export function withCallback(func, callback) {
 	func();
-	if (isStringHelper(callback)) {
+	if (Array.isArray(callback)) {
 		for (let c of callback) {
 			c();
 		}

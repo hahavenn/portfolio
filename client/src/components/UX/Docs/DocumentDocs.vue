@@ -5,7 +5,7 @@
 		</div>
 		<template v-for="c in doc.content">
 			<div class="subtitle">
-				<div :id="strLowerRegexNoSpace(c.subtitle)"></div>
+				<div :id="strToLowerNoSpace(c.subtitle)"></div>
 				<span>{{ c.subtitle }}</span>
 			</div>
 			<template v-for="data in c.paragraph">
@@ -51,7 +51,7 @@ import { onBeforeMount, onMounted, reactive, ref } from "vue";
 
 import { TYPE_SEMANTIC_HTML, TYPE_HTML } from "@/constants/types";
 
-import { strLowerRegexNoSpace } from "@/helpers/textHelper";
+import { strToLowerNoSpace } from "@/helpers/textHelper";
 
 /* define common instances */
 const props = defineProps({
@@ -105,7 +105,7 @@ function watchParagraphs() {
 
 onMounted(() => {
 	for (let c of props.doc.content) {
-		titleList.value.push(document.getElementById(strLowerRegexNoSpace(c.subtitle)));
+		titleList.value.push(document.getElementById(strToLowerNoSpace(c.subtitle)));
 	}
 
 	if (props.currentParagraph) {

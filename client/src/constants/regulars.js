@@ -5,4 +5,7 @@ const REG_EMAIL = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z]+)/g;
 const REG_LETTER_NUMBER = /[\w]/g;
 const REG_NOT_LETTER_NUMBER = /[\`\~\!\@\"\#\№\$\;\:\%^\&\?\*\(\)\-\+\=\{\}\[\]\'\<\>\,\.\/\|\\]/g;
 
-export { REG_EMAIL, REG_LETTER_NUMBER, REG_NOT_LETTER_NUMBER };
+// spaces
+const REG_NO_SPACE = /\s/g;
+
+export { REG_EMAIL, REG_LETTER_NUMBER, REG_NOT_LETTER_NUMBER, REG_NO_SPACE };

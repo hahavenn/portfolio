@@ -43,7 +43,7 @@
 import { REG_NOT_LETTER_NUMBER } from "@/constants/regulars";
 import { TYPE_INSTANCES } from "@/constants/types";
 
-import { strLowerRegexNoSpace } from "@/helpers/textHelper";
+import { strToLowerNoSpace } from "@/helpers/textHelper";
 
 /* define common instances */
 const props = defineProps({
@@ -57,7 +57,7 @@ const props = defineProps({
 
 // make link to title
 function createParagraph(title) {
-	return "#" + strLowerRegexNoSpace(title, REG_NOT_LETTER_NUMBER);
+	return "#" + strToLowerNoSpace(title, REG_NOT_LETTER_NUMBER);
 }
 </script>
 

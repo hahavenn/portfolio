@@ -48,7 +48,7 @@ import { PHRASE_PAGE } from "@/constants/phrases";
 import { TYPE_INSTANCES } from "@/constants/types";
 import { REG_NOT_LETTER_NUMBER } from "@/constants/regulars";
 
-import { strLowerRegexNoSpace } from "@/helpers/textHelper";
+import { strToLowerNoSpace } from "@/helpers/textHelper";
 import { scrollToTop } from "@/helpers/appHelper";
 
 import useRouterHook from "@/hooks/useRouterHook";
@@ -113,7 +113,7 @@ const isTitleClicked = ref(false);
 function setCurrParagraph(paragraph, isClicked) {
 	if (isTitleClicked.value) return;
 
-	currParagraph.value = "#" + strLowerRegexNoSpace(paragraph, REG_NOT_LETTER_NUMBER);
+	currParagraph.value = "#" + strToLowerNoSpace(paragraph, REG_NOT_LETTER_NUMBER);
 	link_meta.value.activeChild = currParagraph.value;
 
 	if (isClicked) {
