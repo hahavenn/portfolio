@@ -9,7 +9,7 @@
 /* 
 	greeting component
 */
-import { ABOUT_ROUTE_PATHS } from "@/router/About/aboutConstants";
+import { ABOUT_ROUTE_PATHS } from "@/router/about_route";
 </script>
 
 <style scoped lang="scss">

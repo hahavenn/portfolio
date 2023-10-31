@@ -1,5 +1,19 @@
-import { INDEX_ROUTE_NAMES, INDEX_ROUTE_ALIAS, INDEX_ROUTE_PATHS } from "./indexConstants.js";
-import aboutRoute from "./About/aboutRoute.js";
+import about_route from "./about_route.js";
+
+// route names
+const INDEX_ROUTE_NAMES = {
+	INDEX: "index",
+};
+
+// route paths
+const INDEX_ROUTE_PATHS = {
+	_: "/",
+};
+
+// route alias
+const INDEX_ROUTE_ALIAS = ["/home", "/index", "/main"];
+
+export { INDEX_ROUTE_NAMES, INDEX_ROUTE_ALIAS, INDEX_ROUTE_PATHS };
 
 // all routes in one variable
 const routes = [
@@ -11,7 +25,7 @@ const routes = [
 		alias: [...INDEX_ROUTE_ALIAS],
 	},
 	// other routes
-	...aboutRoute,
+	about_route,
 ];
 
 export default routes;

@@ -57,8 +57,8 @@ import { openGoToLink } from "@/helpers/linkHelper";
 import { openMailToLink } from "@/helpers/mailHelper";
 
 import { LINK_HAHA_SOCIALS } from "@/constants/links";
-import { INDEX_ROUTE_PATHS } from "@/router/indexConstants";
-import { ABOUT_ROUTE_PATHS } from "@/router/About/aboutConstants";
+import { INDEX_ROUTE_PATHS } from "@/router/routes";
+import { ABOUT_ROUTE_PATHS } from "@/router/about_route";
 
 import useRouterHook from "@/hooks/useRouterHook";
 import useStylesStore from "@/stores/stylesStore";
