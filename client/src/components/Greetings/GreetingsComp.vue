@@ -9,7 +9,7 @@
 /* 
 	greeting component
 */
-import { ABOUT_ROUTE_PATHS } from "@/router/about_route";
+import { ABOUT_ROUTE_PATHS } from "@/router/aboutRoute";
 </script>
 
 <style scoped lang="scss">
@@ -20,3 +20,4 @@ import { ABOUT_ROUTE_PATHS } from "@/router/about_route";
 	color: $font-color_black;
 }
 </style>
+@/router/aboutRoute

@@ -1,4 +1,4 @@
-import about_route from "./about_route.js";
+import aboutRoute from "./aboutRoute.js";
 
 // route names
 const INDEX_ROUTE_NAMES = {
@@ -25,7 +25,7 @@ const routes = [
 		alias: [...INDEX_ROUTE_ALIAS],
 	},
 	// other routes
-	about_route,
+	aboutRoute,
 ];
 
 export default routes;
