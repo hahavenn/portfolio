@@ -102,4 +102,3 @@ header {
 	}
 }
 </style>
-@/router/aboutRoute

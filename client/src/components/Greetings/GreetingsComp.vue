@@ -20,4 +20,3 @@ import { ABOUT_ROUTE_PATHS } from "@/router/aboutRoute";
 	color: $font-color_black;
 }
 </style>
-@/router/aboutRoute
