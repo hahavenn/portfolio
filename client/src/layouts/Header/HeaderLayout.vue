@@ -2,14 +2,17 @@
 	<header>
 		<div class="header_container">
 			<PanelHeader>
-				<LogoUI @click="routerPush(INDEX_ROUTE_PATHS._)" />
+				<LogoUI @click="clickTab(INDEX_ROUTE_PATHS._)" />
 				<SearchUX />
 			</PanelHeader>
 			<PanelHeader>
 				<div class="sections">
-					<SectionInfoHeader @click="routerPush(ABOUT_ROUTE_PATHS._, true)"
-						>Обо мне</SectionInfoHeader
+					<SectionInfoHeader
+						@click="clickTab(ABOUT_ROUTE_PATHS._)"
+						:isActive="routePath === ABOUT_ROUTE_PATHS._"
 					>
+						Обо мне
+					</SectionInfoHeader>
 					<SectionInfoHeader>Что умею</SectionInfoHeader>
 				</div>
 				<SwitcherUX :toggler="stylesStore.changeThemeState">
@@ -60,9 +63,19 @@ import { ABOUT_ROUTE_PATHS } from "@/router/About/aboutConstants";
 import useRouterHook from "@/hooks/useRouterHook";
 import useStylesStore from "@/stores/stylesStore";
 
-const { routerPush } = useRouterHook();
+/* define common instances */
+const { routerPush, routePath } = useRouterHook();
 
 const stylesStore = useStylesStore();
+
+// function to push on other tabs
+function clickTab(toPath) {
+	if (toPath === routePath.value) {
+		return;
+	} else {
+		routerPush(toPath);
+	}
+}
 </script>
 
 <style lang="scss" scoped>
