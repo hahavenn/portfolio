@@ -19,6 +19,7 @@ import SearchIcon from "@/components/Icons/SearchIcon.vue";
 <style scoped lang="scss">
 .search {
 	position: relative;
+	cursor: pointer !important;
 
 	.css-icon {
 		position: absolute;

@@ -23,13 +23,25 @@
 						<MoonIcon />
 					</template>
 				</SwitcherUX>
-				<IconRoundWrapperUI @click="openGoToLink(LINK_HAHA_SOCIALS.GITHUB)">
+				<IconRoundWrapperUI
+					@click="openGoToLink(LINK_HAHA_SOCIALS.GITHUB)"
+					:isHover="true"
+					:cursorPointer="true"
+				>
 					<GithubIcon />
 				</IconRoundWrapperUI>
-				<IconRoundWrapperUI @click="openGoToLink(LINK_HAHA_SOCIALS.TELEGRAM)">
+				<IconRoundWrapperUI
+					@click="openGoToLink(LINK_HAHA_SOCIALS.TELEGRAM)"
+					:isHover="true"
+					:cursorPointer="true"
+				>
 					<TelegramIcon />
 				</IconRoundWrapperUI>
-				<IconRoundWrapperUI @click="openMailToLink(LINK_HAHA_SOCIALS.MAIL)">
+				<IconRoundWrapperUI
+					@click="openMailToLink(LINK_HAHA_SOCIALS.MAIL)"
+					:isHover="true"
+					:cursorPointer="true"
+				>
 					<MailIcon />
 				</IconRoundWrapperUI>
 			</PanelHeader>
@@ -44,7 +56,7 @@ import SectionInfoHeader from "./SectionInfoHeader.vue";
 import SwitcherUX from "@/components/UX/SwitcherUX.vue";
 import SearchUX from "@/components/UX/SearchUX.vue";
 
-import IconRoundWrapperUI from "@/components/UI/Icons/IconRoundWrapperUI.vue";
+import IconRoundWrapperUI from "@/components/UI/IconRoundWrapperUI.vue";
 import LogoUI from "@/components/UI/LogoUI.vue";
 import SunIcon from "@/components/Icons/SunIcon.vue";
 import MoonIcon from "@/components/Icons/MoonIcon.vue";
