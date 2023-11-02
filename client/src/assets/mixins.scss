@@ -94,3 +94,9 @@
 	right: $right;
 	top: $top;
 }
+
+/* square */
+@mixin square($size) {
+	width: $size;
+	height: $size;
+}

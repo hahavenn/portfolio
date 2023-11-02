@@ -4,7 +4,10 @@
 			type="text"
 			placeholder="поиск"
 		/>
-		<SearchIcon class="css-icon" />
+
+		<div class="css-icon">
+			<SearchIcon />
+		</div>
 	</div>
 </template>
 
@@ -22,9 +25,9 @@ import SearchIcon from "@/components/Icons/SearchIcon.vue";
 	cursor: pointer !important;
 
 	.css-icon {
-		position: absolute;
-		right: 7px;
-		top: 7px;
+		@include pos-abs-r-t;
+		@include flex;
+		@include square(40px);
 	}
 
 	input {
