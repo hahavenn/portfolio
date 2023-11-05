@@ -34,6 +34,12 @@
 						</template>
 					</p>
 				</div>
+				<div
+					class="code"
+					v-if="data.type === TYPE_SEMANTIC_HTML.CODE"
+				>
+					<pre><code>{{ data.value.replace(/\n/, "") }}</code></pre>
+				</div>
 			</template>
 		</template>
 	</div>
@@ -161,6 +167,16 @@ onBeforeMount(() => {
 				text-decoration: 2px solid underline $font-color_black;
 				@include link-hover;
 			}
+		}
+	}
+
+	.code {
+		@include border-default($color: $color_active_default);
+		width: 100%;
+		padding: 10px;
+
+		code {
+			font-family: Consolas, "Courier New", monospace;
 		}
 	}
 }
