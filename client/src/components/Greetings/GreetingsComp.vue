@@ -18,5 +18,6 @@ import { ABOUT_ROUTE_PATHS } from "@/router/aboutRoute";
 	@include fullSize;
 	font-size: $font-size_giant;
 	color: $font-color_black;
+	flex-grow: 1;
 }
 </style>

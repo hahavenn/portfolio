@@ -32,7 +32,7 @@ const loadingState = mainStore.loadingState;
 		width: $width_desktop;
 		height: fit-content;
 		flex-grow: 1;
-		@include flex;
+		@include flex($direction: column, $justify-content: flex-start);
 	}
 }
 </style>
