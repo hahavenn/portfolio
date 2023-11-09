@@ -10,7 +10,7 @@
 export const LINK_HAHA_SOCIALS = {
 	TELEGRAM: "https://t.me/hahavenn",
 	GITHUB: "https://github.com/hahavenn",
-	MAIL: "hahavenn@mail.com",
+	MAIL: "hahavenn@gmail.com",
 };
 
 // my habr articles
