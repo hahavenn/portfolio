@@ -3,7 +3,7 @@
 		<div class="header_container">
 			<PanelHeader>
 				<LogoUI @click="clickTab(INDEX_ROUTE_PATHS._)" />
-				<SearchUX />
+				<SearchFunc />
 			</PanelHeader>
 			<PanelHeader>
 				<div class="sections">
@@ -15,14 +15,14 @@
 					</SectionInfoHeader>
 					<SectionInfoHeader>Что умею</SectionInfoHeader>
 				</div>
-				<SwitcherUX :toggler="stylesStore.changeThemeState">
+				<SwitcherFunc :toggler="stylesStore.changeThemeState">
 					<template #left>
 						<SunIcon />
 					</template>
 					<template #right>
 						<MoonIcon />
 					</template>
-				</SwitcherUX>
+				</SwitcherFunc>
 				<IconRoundWrapperUI
 					@click="openGoToLink(LINK_HAHA_SOCIALS.GITHUB)"
 					:isHover="true"
@@ -53,8 +53,8 @@
 import PanelHeader from "./PanelHeader.vue";
 import SectionInfoHeader from "./SectionInfoHeader.vue";
 
-import SwitcherUX from "@/components/UX/SwitcherUX.vue";
-import SearchUX from "@/components/UX/SearchUX.vue";
+import SwitcherFunc from "@/components/Func/SwitcherFunc.vue";
+import SearchFunc from "@/components/Func/SearchFunc.vue";
 
 import IconRoundWrapperUI from "@/components/UI/IconRoundWrapperUI.vue";
 import LogoUI from "@/components/UI/LogoUI.vue";

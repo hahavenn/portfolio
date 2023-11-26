@@ -2,7 +2,7 @@
 	<div class="layout">
 		<HeaderLayout />
 		<div class="page">
-			<LoaderUX v-if="loadingState" />
+			<LoaderFunc v-if="loadingState" />
 			<slot></slot>
 		</div>
 		<FooterLayout />
@@ -13,7 +13,7 @@
 import HeaderLayout from "@/layouts/Header/HeaderLayout.vue";
 import FooterLayout from "@/layouts/Footer/FooterLayout.vue";
 
-import LoaderUX from "@/components/UX/LoaderUX.vue";
+import LoaderFunc from "@/components/Func/LoaderFunc.vue";
 
 import useMainStore from "@/stores/mainStore";
 

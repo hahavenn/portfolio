@@ -1,5 +1,5 @@
 <template>
-	<PageUX>
+	<PageFunc>
 		<template #leftPanel>
 			<NavPage
 				:action="setCurrentDoc"
@@ -17,7 +17,7 @@
 		<template #rightPanel>
 			<MetaPage :meta="[link_meta]" />
 		</template>
-	</PageUX>
+	</PageFunc>
 </template>
 
 <script setup>
@@ -40,9 +40,9 @@
 import { computed, onBeforeMount, onMounted, ref } from "vue";
 
 import DocumentDocs from "./DocumentDocs.vue";
-import PageUX from "@/components/UX/Page/PageUX.vue";
-import NavPage from "@/components/UX/Page/NavPage.vue";
-import MetaPage from "@/components/UX/Page/MetaPage.vue";
+import PageFunc from "@/components/Func/Page/PageFunc.vue";
+import NavPage from "@/components/Func/Page/NavPage.vue";
+import MetaPage from "@/components/Func/Page/MetaPage.vue";
 
 import { PHRASE_PAGE } from "@/constants/phrases";
 import { TYPE_INSTANCES } from "@/constants/types";

@@ -1,6 +1,6 @@
 <template>
 	<div class="about_container">
-		<DocsUX :docs="[textAbout]" />
+		<DocsFunc :docs="[textAbout]" />
 	</div>
 </template>
 
@@ -9,7 +9,7 @@
 	about component 
 */
 
-import DocsUX from "@/components/UX/Docs/DocsUX.vue";
+import DocsFunc from "@/components/Func/Docs/DocsFunc.vue";
 
 import textAbout from "@/texts/aboutText";
 </script>
