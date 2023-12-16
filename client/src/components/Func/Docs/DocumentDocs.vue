@@ -49,11 +49,7 @@
 /* 
 	props:
 		doc - document to display
-		paragraphSetter - function, to set current paragraph
-		currentParagraph - current paragraph
 */
-
-import { onBeforeMount, onMounted, reactive, ref } from "vue";
 
 import { TYPE_SEMANTIC_HTML, TYPE_HTML } from "@/constants/types";
 
@@ -65,66 +61,6 @@ const props = defineProps({
 		type: Object,
 		required: true,
 	},
-	paragraphSetter: {
-		type: Function,
-		required: true,
-	},
-	currentParagraph: {
-		type: String,
-	},
-});
-
-// list of titles
-const titleList = ref([]);
-
-// paragraphs, which positions we should watch
-const paragraphsToWatch = reactive({
-	previous: null,
-	next: null,
-});
-
-// when new paragraph become current - set actual paragraphs to watch
-function resetParagraphsToWatch() {
-	for (let i = 0; i < titleList.value.length; i++) {
-		if ("#" + titleList.value[i].id == props.currentParagraph) {
-			paragraphsToWatch.previous = i > 0 ? titleList.value[i - 1] : null;
-			paragraphsToWatch.next = i + 1 < titleList.value.length ? titleList.value[i + 1] : null;
-		}
-	}
-}
-
-// this function executes when we scrolling page - watch paragraphs' positions
-function watchParagraphs() {
-	if (paragraphsToWatch.next && paragraphsToWatch.next.getBoundingClientRect().top < 0) {
-		props.paragraphSetter(paragraphsToWatch.next.id);
-		resetParagraphsToWatch();
-	} else if (
-		paragraphsToWatch.previous &&
-		paragraphsToWatch.previous.getBoundingClientRect().top > 0
-	) {
-		props.paragraphSetter(paragraphsToWatch.previous.id);
-		resetParagraphsToWatch();
-	}
-}
-
-/* hooks */
-
-onMounted(() => {
-	for (let c of props.doc.content) {
-		titleList.value.push(document.getElementById(strToLowerNoSpace(c.subtitle)));
-	}
-
-	if (props.currentParagraph) {
-		resetParagraphsToWatch();
-	} else {
-		paragraphsToWatch.next = titleList.value[0];
-	}
-
-	document.addEventListener("scroll", watchParagraphs);
-});
-
-onBeforeMount(() => {
-	document.removeEventListener("scroll", watchParagraphs);
 });
 </script>
 

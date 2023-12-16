@@ -8,11 +8,7 @@
 			/>
 		</template>
 		<template #content>
-			<DocumentDocs
-				:doc="currDoc.doc"
-				:paragraphSetter="setCurrParagraph"
-				:currentParagraph="currParagraph"
-			/>
+			<DocumentDocs :doc="currDoc.doc" />
 		</template>
 		<template #rightPanel>
 			<MetaPage :meta="[link_meta]" />
@@ -37,7 +33,7 @@
 		meta - page's meta, functions, table of contents
 */
 
-import { computed, onBeforeMount, onMounted, ref } from "vue";
+import { computed, ref } from "vue";
 
 import DocumentDocs from "./DocumentDocs.vue";
 import PageFunc from "@/components/Func/Page/PageFunc.vue";
@@ -92,8 +88,6 @@ const currParagraph = ref(routeHash.value ? routeHash.value : null);
 
 // reseting current paragraph
 function resetCurrParagraph() {
-	isTitleClicked.value = true;
-
 	clearHash();
 	scrollToTop();
 
@@ -101,26 +95,12 @@ function resetCurrParagraph() {
 	link_meta.value.activeChild = currParagraph.value;
 }
 
-// actions, which we need to dispatch on scrollend event
-function onscrollendEvent() {
-	isTitleClicked.value = false;
-}
-
-// if title was clicked - scroll event cannot run, because it is already scrollin via click event
-const isTitleClicked = ref(false);
-
 // set current paragraph
-function setCurrParagraph(paragraph, isClicked) {
-	if (isTitleClicked.value) return;
-
+function setCurrParagraph(paragraph) {
 	currParagraph.value = "#" + strToLowerNoSpace(paragraph, REG_NOT_LETTER_NUMBER);
 	link_meta.value.activeChild = currParagraph.value;
 
-	if (isClicked) {
-		isTitleClicked.value = true;
-	} else {
-		routerPush(currParagraph.value);
-	}
+	routerPush(currParagraph.value);
 }
 
 // define list of paragraps on the page
@@ -142,15 +122,6 @@ const link_meta = ref({
 	children: pageParagraphs.value,
 	childAction: setCurrParagraph,
 	activeChild: currParagraph.value,
-});
-
-/* hooks */
-onMounted(() => {
-	document.onscrollend = onscrollendEvent;
-});
-
-onBeforeMount(() => {
-	document.removeEventListener("onscrollend", onscrollendEvent);
 });
 </script>
 
